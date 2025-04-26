@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"    <!-- fondo negro -->
+    android:padding="16dp">
+
+    <GridLayout
+    android:id="@+id/grid"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:rowCount="5"
+    android:columnCount="3"
+    android:useDefaultMargins="true"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <!-- Fila 1 -->
+    <Button style="@style/KeyButton" android:text="7"/>
+    <Button style="@style/KeyButton" android:text="8"/>
+    <Button style="@style/KeyButton" android:text="9"/>
+
+    <!-- Fila 2 -->
+    <Button style="@style/KeyButton" android:text="4"/>
+    <Button style="@style/KeyButton" android:text="5"/>
+    <Button style="@style/KeyButton" android:text="6"/>
+
+    <!-- Fila 3 -->
+    <Button style="@style/KeyButton" android:text="1"/>
+    <Button style="@style/KeyButton" android:text="2"/>
+    <Button style="@style/KeyButton" android:text="3"/>
+
+    <!-- Fila 4: centramos la tecla '|' dejando espacios en los extremos -->
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"/>
+        <Button style="@style/KeyButton" android:text="|"/>
+        <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"/>
+
+    <!-- Fila 5: flechas -->
+    <Button style="@style/KeyButton" android:text="&lt;-"/>
+    <Button style="@style/KeyButton" android:text="|"/>
+    <Button style="@style/KeyButton" android:text="-&gt;"/>
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
