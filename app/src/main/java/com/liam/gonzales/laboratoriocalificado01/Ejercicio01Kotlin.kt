@@ -1,28 +1,17 @@
-package com.liam.gonzales.laboratoriocalificado01
+package com.liam.gonzales.laboratoriocalificado01  // Declara el paquete de la aplicación
 
-/**
- * Contiene el algoritmo para verificar anagramas.
- */
-object Ejercicio01Kotlin {
-    /**
-     * Verifica si dos palabras son anagramas:
-     *  - Quita espacios
-     *  - Unifica a minúsculas
-     *  - Ordena caracteres y compara
-     */
-    fun verificarAnagrama(s1: String, s2: String): Boolean {
-        // 1. Eliminar espacios en blanco
-        val str1 = s1.replace("\\s+".toRegex(), "")
-        val str2 = s2.replace("\\s+".toRegex(), "")
-        // 2. Pasar todo a minúsculas
-        val low1 = str1.lowercase()
-        val low2 = str2.lowercase()
-        // 3. Si las longitudes difieren, no es anagrama
-        if (low1.length != low2.length) return false
-        // 4. Ordenar los caracteres de cada palabra
-        val sorted1 = low1.toCharArray().sorted()
-        val sorted2 = low2.toCharArray().sorted()
-        // 5. Comparar listas ordenadas
-        return sorted1 == sorted2
+class Ejercicio01Kotlin {  // Define la clase que contiene el algoritmo de anagramas
+    fun verificarAnagrama(s1: String, s2: String): Boolean {  // Método que recibe dos cadenas y devuelve si son anagramas
+        val sorted1 = s1
+            .filterNot { it.isWhitespace() }  // 1. Elimina todos los espacios de s1
+            .lowercase()                      // 2. Convierte s1 a minúsculas
+            .toCharArray()                    // 3. Transforma s1 en un arreglo de caracteres
+            .sorted()                         // 4. Ordena alfabéticamente los caracteres de s1
+        val sorted2 = s2
+            .filterNot { it.isWhitespace() }  // 1. Elimina todos los espacios de s2
+            .lowercase()                      // 2. Convierte s2 a minúsculas
+            .toCharArray()                    // 3. Transforma s2 en un arreglo de caracteres
+            .sorted()                         // 4. Ordena alfabéticamente los caracteres de s2
+        return sorted1 == sorted2            // 5. Compara ambas listas ordenadas; true si son idénticas
     }
 }
